@@ -6,7 +6,7 @@ url='https://wiki.ros.org/image_transport_plugins'
 pkgname='ros-noetic-compressed-depth-image-transport'
 pkgver='1.14.0'
 arch=('i686' 'x86_64' 'aarch64' 'armv7h' 'armv6h')
-pkgrel=1
+pkgrel=2
 license=('BSD')
 
 ros_makedepends=(
@@ -32,9 +32,10 @@ depends=(
 	${ros_depends[@]}
 )
 
-_dir="image_transport_plugins-${pkgver}/compressed_depth_image_transport"
-source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros-perception/image_transport_plugins/archive/${pkgver}.tar.gz")
-sha256sums=('eed856edeb26c66c1e1730a8c8b26ea6dec03d2f9a3c6db0462767106f9e73d8')
+_commit="cae592ce0816ea03bc38f0b6d27b6eae907feb10"
+_dir="image_transport_plugins-${_commit}/compressed_depth_image_transport"
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros-perception/image_transport_plugins/archive/${_commit}.tar.gz")
+sha256sums=('185c507984daf753b7d5a7b21f361ded09c16dc648900d3b3e9eaf9ee462704d')
 
 build() {
 	# Use ROS environment variables.
